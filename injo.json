@@ -1,6 +1,6 @@
 {
     "name": "manage-engine-service-desk-plus",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "label": "ManageEngine ServiceDesk Plus",
     "description": "ManageEngine ServiceDesk Plus is used in turning IT teams from daily fire-fighting to delivering awesome customer service. It provides great visibility and central control in dealing with IT issues to ensure that businesses suffer no downtime. This connector provides automated actions to create, update, delete and close tickets",
     "publisher": "SpryIQ.Co",
