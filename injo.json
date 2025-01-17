@@ -1,0 +1,1815 @@
+{
+    "name": "manage-engine-service-desk-plus",
+    "version": "3.0.0",
+    "label": "ManageEngine ServiceDesk Plus",
+    "description": "ManageEngine ServiceDesk Plus is used in turning IT teams from daily fire-fighting to delivering awesome customer service. It provides great visibility and central control in dealing with IT issues to ensure that businesses suffer no downtime. This connector provides automated actions to create, update, delete and close tickets",
+    "publisher": "SpryIQ.Co",
+    "icon_small_name": "Manageengine_Servicedesk_Plus_32X32.png",
+    "icon_large_name": "Manageengine_Servicedesk_Plus_80X80.png",
+    "category": [
+        "Ticket Management"
+    ],
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "name": "server_url",
+                "required": true,
+                "visible": true,
+                "editable": true
+            },
+            {
+                "title": "API Key",
+                "type": "password",
+                "name": "token",
+                "required": true,
+                "visible": true,
+                "editable": true
+            },
+            {
+                "title": "Verify SSL",
+                "type": "checkbox",
+                "name": "verify_ssl",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "value": true
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "add_request",
+            "title": "Create Ticket",
+            "description": "Creates a ticket in ServiceDesk Plus based on the requester, subject, and other input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "create_record",
+            "output_schema": {
+                "request": {
+                    "is_first_response_overdue": "",
+                    "impact_details": "",
+                    "impact": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "urgency": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "level": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "description": "",
+                    "priority": {
+                        "id": "",
+                        "color": "",
+                        "name": ""
+                    },
+                    "sla": "",
+                    "template": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "created_by": {
+                        "id": "",
+                        "name": "",
+                        "email_id": ""
+                    },
+                    "requester": {
+                        "id": "",
+                        "name": "",
+                        "email_id": ""
+                    },
+                    "first_response_due_by_time": "",
+                    "service_category": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "is_reopened": "",
+                    "status": {
+                        "id": "",
+                        "color": "",
+                        "name": ""
+                    },
+                    "approval_status": "",
+                    "email_cc": [],
+                    "due_by_time": "",
+                    "closure_info": {
+                        "closure_code": {
+                            "id": "",
+                            "name": ""
+                        },
+                        "requester_ack_comments": "",
+                        "closure_comments": "",
+                        "requester_ack_resolution": ""
+                    },
+                    "is_trashed": "",
+                    "request_template_task_ids": [],
+                    "assets": [],
+                    "category": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "editor": {
+                        "id": "",
+                        "name": "",
+                        "email_id": ""
+                    },
+                    "time_elapsed": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "on_behalf_of": "",
+                    "is_service_request": "",
+                    "assigned_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "technician": {
+                        "id": "",
+                        "name": "",
+                        "email_id": ""
+                    },
+                    "request_type": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "subject": "",
+                    "department": "",
+                    "udf_fields": {
+                        "udf_date_601": {
+                            "display_value": "",
+                            "value": ""
+                        },
+                        "udf_pick_20": "",
+                        "udf_mline_314": "",
+                        "udf_pick_44": "",
+                        "udf_long_367": "",
+                        "udf_sline_25": "",
+                        "udf_sline_26": "",
+                        "udf_decimal_42": ""
+                    },
+                    "resolution": "",
+                    "mode": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "id": "",
+                    "resolved_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "responded_time": "",
+                    "attachments": [],
+                    "completed_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "site": "",
+                    "email_ids_to_notify": [],
+                    "is_fcr": "",
+                    "is_overdue": "",
+                    "email_to": [],
+                    "last_updated_time": "",
+                    "subcategory": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "item": "",
+                    "created_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "group": {
+                        "id": "",
+                        "name": ""
+                    }
+                },
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Subject",
+                    "type": "text",
+                    "name": "subject",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "description":"Specify the subject of the ticket request that you want to create in ServiceDesk Plus.",
+                    "tooltip": "Specify the subject of the ticket request that you want to create in ServiceDesk Plus."
+                },
+                {
+                    "title": "Description",
+                    "type": "text",
+                    "name": "description",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "description": "Specify the description of the ticket request that you want to create in ServiceDesk Plus.",
+                    "tooltip": "Specify the description of the ticket request that you want to create in ServiceDesk Plus."
+                },
+                {
+                    "title": "Request Type",
+                    "type": "text",
+                    "name": "request_type",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "description": "Specify the description of the ticket request that you want to create in ServiceDesk Plus.",
+                    "tooltip": "Specify the type of ticket request that you want to create in ServiceDesk Plus. \nRequest type can be Incident, Request For Information, etc."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the status that you want to assign to the ticket request you want to create in ServiceDesk Plus.",
+                    "options": [
+                        "Assigned",
+                        "Cancelled",
+                        "Closed",
+                        "In Progress",
+                        "Onhold",
+                        "Open",
+                        "Resolved"
+                    ]
+                },
+                {
+                    "title": "Priority",
+                    "type": "select",
+                    "name": "priority",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the priority that you want to assign to the ticket request you want to create in ServiceDesk Plus. You can choose between High, Low, Medium, or Normal.",
+                    "options": [
+                        "High",
+                        "Low",
+                        "Medium",
+                        "Normal"
+                    ]
+                },
+                {
+                    "title": "Urgency",
+                    "type": "select",
+                    "name": "urgency",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the urgency that you want to assign to the ticket request you want to create in ServiceDesk Plus.",
+                    "options": [
+                        "High",
+                        "Low",
+                        "Normal",
+                        "Urgent"
+                    ]
+                },
+                {
+                    "title": "Group",
+                    "type": "text",
+                    "name": "group",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "description": "Specify the group that you want to assign to the ticket request you want to create in ServiceDesk Plus.",
+                    "tooltip": "Specify the group that you want to assign to the ticket request you want to create in ServiceDesk Plus."
+                },
+                {
+                    "title": "Requester",
+                    "type": "json",
+                    "name": "requester",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "description": "Specify the requester name, in the JSON format, who is requesting the creation of the ticket in ServiceDesk Plus. For example, {\"name\":\"Guest\", \"id\":\"3\"}",
+                    "tooltip": "Specify the requester name, in the JSON format, who is requesting the creation of the ticket in ServiceDesk Plus. For example, {\"name\":\"Guest\", \"id\":\"3\"}"
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "description": "Add custom fields, in the JSON format, to the ticket request that you want to create in ServiceDesk Plus. For example, \n{\n  \"level\": {\n    \"name\": \"Tier 3\"\n  },\n  \"category\": {\n    \"name\": \"Network\"\n  }\n}",
+                    "tooltip": "Add custom fields, in the JSON format, to the ticket request that you want to create in ServiceDesk Plus. For example, \n{\n  \"level\": {\n    \"name\": \"Tier 3\"\n  },\n  \"category\": {\n    \"name\": \"Network\"\n  }\n}"
+                }
+            ]
+        },
+        {
+            "operation": "add_resolution",
+            "title": "Add Resolution",
+            "description": "Adds a resolution to an existing ticket in ServiceDesk Plus based on the ticket request ID and resolution you have specified.",
+            "category": "investigation",
+            "annotation": "add_resolution",
+            "output_schema": {
+                "response_status": {
+                    "status_code": "",
+                    "messages": [
+                        {
+                            "status_code": "",
+                            "type": "",
+                            "message": ""
+                        }
+                    ],
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket request to which you want to add the resolution in ServiceDesk Plus."
+                },
+                {
+                    "title": "Resolution",
+                    "type": "text",
+                    "name": "resolution",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the resolution that you want to add to the specified ticket in ServiceDesk Plus."
+                }
+            ]
+        },
+        {
+            "operation": "add_note",
+            "title": "Add Note",
+            "description": "Adds a note to an existing ticket in ServiceDesk Plus based on the ticket request ID, description, and other input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "add_note",
+            "output_schema": {
+                "note": {
+                    "request": {
+                        "subject": "",
+                        "id": ""
+                    },
+                    "last_updated_by": "",
+                    "added_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "has_attachments": "",
+                    "attachments": [],
+                    "last_updated_time": "",
+                    "added_by": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "image_token": "",
+                    "show_to_requester": "",
+                    "description": "",
+                    "id": ""
+                },
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket request to which you want to add the note in ServiceDesk Plus."
+                },
+                {
+                    "title": "Description",
+                    "type": "text",
+                    "name": "description",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the note that you want to add to the specified ticket in ServiceDesk Plus."
+                },
+                {
+                    "title": "Show to Requester",
+                    "type": "checkbox",
+                    "name": "show_to_requester",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this checkbox, i.e. set it to True, to show the note to requester. By default, this is set as False, i.e. it is set as a private note."
+                },
+                {
+                    "title": "Mark First Response",
+                    "type": "checkbox",
+                    "name": "mark_first_response",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this checkbox, i.e. set it to True, to set the responded date of the request/ticket. By default, this is set as False."
+                },
+                {
+                    "title": "Add to Linked Requests",
+                    "type": "checkbox",
+                    "name": "add_to_linked_requests",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this checkbox, i.e. set it to 'True', to add the note to the linked requests. By default, this is set as 'False'."
+                },
+                {
+                    "title": "Notify Technician",
+                    "type": "checkbox",
+                    "name": "notify_technician",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this checkbox, i.e. set it to True, to notify the technician when the note is added. By default, this is set as False."
+                }
+            ]
+        },
+        {
+            "operation": "get_request",
+            "title": "Get Ticket Details",
+            "description": "Retrieves details of a specific ticket from ServiceDesk Plus based on the ticket request ID you have specified.",
+            "category": "investigation",
+            "annotation": "get_record",
+            "output_schema": {
+                "request": {
+                    "ola_due_by_time": "",
+                    "resolution": {
+                        "submitted_on": {
+                            "display_value": "",
+                            "value": ""
+                        },
+                        "submitted_by": {
+                            "email_id": "",
+                            "phone": "",
+                            "name": "",
+                            "mobile": "",
+                            "profile_pic": {
+                                "content-url": ""
+                            },
+                            "is_vipuser": "",
+                            "id": "",
+                            "department": ""
+                        },
+                        "resolution_attachments": [],
+                        "content": ""
+                    },
+                    "onhold_time": "",
+                    "is_trashed": "",
+                    "id": "",
+                    "assigned_time": "",
+                    "requester": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "cancel_requested_by": "",
+                    "sla_violated_technician": "",
+                    "item": "",
+                    "has_resolution_attachments": "",
+                    "impact": "",
+                    "sla": {
+                        "name": "",
+                        "id": ""
+                    },
+                    "priority": {
+                        "color": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "sla_violated_group": "",
+                    "tags": [],
+                    "has_notes": "",
+                    "is_current_ola_violated": "",
+                    "image_token": "",
+                    "status": {
+                        "color": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "template": {
+                        "is_service_template": "",
+                        "service_category": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "primary_asset": "",
+                    "request_type": "",
+                    "cancel_requested_time": "",
+                    "chat_type": "",
+                    "is_service_request": "",
+                    "cancel_requested": "",
+                    "has_request_initiated_change": "",
+                    "has_attachments": "",
+                    "has_linked_requests": "",
+                    "has_request_caused_by_change": "",
+                    "has_problem": "",
+                    "subject": "",
+                    "linked_to_request": "",
+                    "mode": "",
+                    "is_read": "",
+                    "lifecycle": "",
+                    "reason_for_cancel": "",
+                    "assets": [],
+                    "group": "",
+                    "email_to": [],
+                    "created_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "level": "",
+                    "approval_status": "",
+                    "service_category": "",
+                    "created_by": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "scheduled_end_time": "",
+                    "first_response_due_by_time": "",
+                    "last_updated_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "impact_details": "",
+                    "subcategory": "",
+                    "email_cc": [],
+                    "scheduled_start_time": "",
+                    "email_ids_to_notify": [],
+                    "notification_status": "",
+                    "description": "",
+                    "has_dependency": "",
+                    "has_conversation": "",
+                    "callback_url": "",
+                    "urgency": {
+                        "name": "",
+                        "id": ""
+                    },
+                    "is_shared": "",
+                    "request_template_task_ids": [],
+                    "department": "",
+                    "is_reopened": "",
+                    "has_draft": "",
+                    "is_overdue": "",
+                    "technician": "",
+                    "due_by_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "has_project": "",
+                    "is_first_response_overdue": "",
+                    "cancel_requested_is_pending": "",
+                    "recommend_template": "",
+                    "unreplied_count": "",
+                    "category": "",
+                    "maintenance": ""
+                },
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket request for which you want to retrieve details from ServiceDesk Plus."
+                }
+            ]
+        },
+        {
+            "operation": "get_all_requester",
+            "title": "Get All Requesters",
+            "description": "Retrieves details of all requesters or specific requesters from ServiceDesk Plus based on the input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "get_all_requester",
+            "output_schema": {
+                "requester": [
+                    {
+                        "email_id": "",
+                        "is_technician": "",
+                        "employee_id": "",
+                        "name": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "id": "",
+                        "department": "",
+                        "type": "",
+                        "citype": {
+                            "name": "",
+                            "id": ""
+                        }
+                    }
+                ],
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                },
+                "image_token": "",
+                "list_info": {
+                    "has_more_rows": "",
+                    "start_index": "",
+                    "search_fields": "",
+                    "sort_field": "",
+                    "sort_order": "",
+                    "row_count": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Requester ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the requester whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Name",
+                    "type": "text",
+                    "name": "name",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the name of the requester whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Employee ID",
+                    "type": "text",
+                    "name": "employee_id",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the employee ID of the requester whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Email ID",
+                    "type": "text",
+                    "name": "email_id",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the email ID of the requester whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Type",
+                    "type": "select",
+                    "name": "type",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the type of requester whose details you want to retrieve from ServiceDesk Plus. ",
+                    "options": [
+                        "User",
+                        "Technician"
+                    ]
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify custom fields, in the JSON format, that you want to use for filtering requesters whose details you want to retrieve from ServiceDesk Plus. For example, { \"name\": \"abc\" } "
+                },
+                {
+                    "title": "Fields Required",
+                    "type": "text",
+                    "name": "fields_required",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the fields required to be retrieved for the requesters you want to retrieve from ServiceDesk Plus. You can specify multiple fields using a comma separator."
+                },
+                {
+                    "title": "Sort By",
+                    "type": "text",
+                    "name": "sort_field",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the field using which you want to sort the requesters retrieved from ServiceDesk Plus. For example, name"
+                },
+                {
+                    "title": "Sort Order",
+                    "type": "select",
+                    "name": "sort_order",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the order in which you want to sort the requesters retrieved from ServiceDesk Plus. You can choose between Ascending or Descending.",
+                    "options": [
+                        "Ascending",
+                        "Descending"
+                    ]
+                },
+                {
+                    "title": "Start Index",
+                    "type": "integer",
+                    "name": "start_index",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the index of the first item (requester) to be returned by this operation. This parameter is useful if you want to get a subset of records. \nNote: You can specify the minimum number as 1."
+                },
+                {
+                    "title": "Record Count",
+                    "type": "integer",
+                    "name": "size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the maximum number of records (requesters) to be returned by this operation in a single request. \nNote: You can specify the minimum number as 1."
+                }
+            ]
+        },
+        {
+            "operation": "get_all_open_requests",
+            "title": "Get All Open Tickets",
+            "description": "Retrieves details of all open tickets or specific open tickets from ServiceDesk Plus based on the input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "get_all_open_requests",
+            "output_schema": {
+                "response_status": [
+                    {
+                        "status_code": "",
+                        "status": ""
+                    }
+                ],
+                "list_info": {
+                    "has_more_rows": "",
+                    "start_index": "",
+                    "search_fields": {
+                        "urgency.name": "",
+                        "status.name": ""
+                    },
+                    "total_count": "",
+                    "get_total_count": "",
+                    "row_count": ""
+                },
+                "requests": [
+                    {
+                        "requester": {
+                            "email_id": "",
+                            "phone": "",
+                            "name": "",
+                            "mobile": "",
+                            "profile_pic": {
+                                "content-url": ""
+                            },
+                            "is_vipuser": "",
+                            "id": "",
+                            "department": ""
+                        },
+                        "template": {
+                            "is_service_template": "",
+                            "service_category": "",
+                            "name": "",
+                            "id": ""
+                        },
+                        "short_description": "",
+                        "created_time": {
+                            "display_value": "",
+                            "value": ""
+                        },
+                        "subject": "",
+                        "time_elapsed": "",
+                        "is_overdue": "",
+                        "technician": "",
+                        "priority": {
+                            "color": "",
+                            "name": "",
+                            "id": ""
+                        },
+                        "created_by": {
+                            "email_id": "",
+                            "phone": "",
+                            "name": "",
+                            "mobile": "",
+                            "profile_pic": {
+                                "content-url": ""
+                            },
+                            "is_vipuser": "",
+                            "id": "",
+                            "department": ""
+                        },
+                        "due_by_time": {
+                            "display_value": "",
+                            "value": ""
+                        },
+                        "response_time_elapsed": "",
+                        "site": "",
+                        "is_service_request": "",
+                        "cancel_requested_is_pending": "",
+                        "cancel_requested": "",
+                        "id": "",
+                        "status": {
+                            "color": "",
+                            "name": "",
+                            "id": ""
+                        },
+                        "group": ""
+                    }
+                ]
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket request for which you want to retrieve details from ServiceDesk Plus."
+                },
+                {
+                    "title": "Subject",
+                    "type": "text",
+                    "name": "subject",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the subject of the ticket request for which you want to retrieve details from ServiceDesk Plus."
+                },
+                {
+                    "title": "Priority",
+                    "type": "select",
+                    "name": "priority.name",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "Select the priority of the ticket request for which you want to retrieve details from ServiceDesk Plus.",
+                    "options": [
+                        "High",
+                        "Low",
+                        "Medium",
+                        "Normal"
+                    ]
+                },
+                {
+                    "title": "Requester Name",
+                    "type": "text",
+                    "name": "requester.name",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the name of the requester whose open tickets details you want to retrieve details from ServiceDesk Plus."
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify custom fields, in the JSON format, that you want to use for filtering open tickets whose details you want to retrieve from ServiceDesk Plus. For example, {\n  \"urgency.name\": \"Low\"\n}"
+                },
+                {
+                    "title": "Sort By",
+                    "type": "text",
+                    "name": "sort_field",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the field using which you want to sort the open tickets retrieved from ServiceDesk Plus."
+                },
+                {
+                    "title": "Sort Order",
+                    "type": "select",
+                    "name": "sort_order",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the order in which you want to sort the open tickets retrieved from ServiceDesk Plus.",
+                    "options": [
+                        "Ascending",
+                        "Descending"
+                    ]
+                },
+                {
+                    "title": "Start From",
+                    "type": "text",
+                    "name": "from",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": 1,
+                    "tooltip": "Specify the index of the first item (open tickets) to be returned by this operation. This parameter is useful if you want to get a subset of records. By default, this is set as 1."
+                },
+                {
+                    "title": "Limit Upto",
+                    "type": "text",
+                    "name": "limit",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the index till when, i.e. the last item (open tickets) to be returned by this operation."
+                }
+            ]
+        },
+        {
+            "operation": "update_request",
+            "title": "Update Ticket",
+            "description": "Updates an existing ticket in ServiceDesk Plus based on the ticket request ID and other input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "update_record",
+            "output_schema": {
+                "request": {
+                    "ola_due_by_time": "",
+                    "resolution": {
+                        "submitted_on": {
+                            "display_value": "",
+                            "value": ""
+                        },
+                        "submitted_by": {
+                            "email_id": "",
+                            "phone": "",
+                            "name": "",
+                            "mobile": "",
+                            "profile_pic": {
+                                "content-url": ""
+                            },
+                            "is_vipuser": "",
+                            "id": "",
+                            "department": ""
+                        },
+                        "resolution_attachments": [],
+                        "content": ""
+                    },
+                    "onhold_time": "",
+                    "is_trashed": "",
+                    "id": "",
+                    "assigned_time": "",
+                    "requester": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "cancel_requested_by": "",
+                    "sla_violated_technician": "",
+                    "item": "",
+                    "has_resolution_attachments": "",
+                    "impact": "",
+                    "sla": "",
+                    "resolved_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "priority": "",
+                    "sla_violated_group": "",
+                    "tags": [],
+                    "has_notes": "",
+                    "is_current_ola_violated": "",
+                    "image_token": "",
+                    "status": {
+                        "color": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "template": {
+                        "is_service_template": "",
+                        "service_category": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "primary_asset": "",
+                    "request_type": "",
+                    "cancel_requested_time": "",
+                    "responded_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "age_after_violation": "",
+                    "chat_type": "",
+                    "is_service_request": "",
+                    "cancel_requested": "",
+                    "has_request_initiated_change": "",
+                    "has_attachments": "",
+                    "has_linked_requests": "",
+                    "has_request_caused_by_change": "",
+                    "has_problem": "",
+                    "is_fcr": "",
+                    "response_time_elapsed": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "total_unassigned_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "completed_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "subject": "",
+                    "linked_to_request": "",
+                    "mode": "",
+                    "is_read": "",
+                    "lifecycle": "",
+                    "reason_for_cancel": "",
+                    "assets": [],
+                    "group": "",
+                    "email_to": [],
+                    "created_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "level": "",
+                    "approval_status": "",
+                    "service_category": "",
+                    "created_by": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "scheduled_end_time": "",
+                    "first_response_due_by_time": "",
+                    "last_updated_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "impact_details": "",
+                    "subcategory": "",
+                    "email_cc": [],
+                    "scheduled_start_time": "",
+                    "email_ids_to_notify": [],
+                    "time_elapsed": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "notification_status": "",
+                    "description": "",
+                    "has_dependency": "",
+                    "closure_info": {
+                        "requester_ack_comments": "",
+                        "closure_code": "",
+                        "closure_comments": "",
+                        "requester_ack_resolution": ""
+                    },
+                    "has_conversation": "",
+                    "callback_url": "",
+                    "urgency": {
+                        "name": "",
+                        "id": ""
+                    },
+                    "is_shared": "",
+                    "request_template_task_ids": [],
+                    "department": "",
+                    "is_reopened": "",
+                    "has_draft": "",
+                    "is_overdue": "",
+                    "technician": "",
+                    "due_by_time": "",
+                    "has_project": "",
+                    "age_after_sla_response_violation": "",
+                    "is_first_response_overdue": "",
+                    "cancel_requested_is_pending": "",
+                    "recommend_template": "",
+                    "unreplied_count": "",
+                    "category": "",
+                    "maintenance": ""
+                },
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket that you want to update in ServiceDesk Plus."
+                },
+                {
+                    "title": "Subject",
+                    "type": "text",
+                    "name": "subject",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the subject of the ticket request that you want to update in ServiceDesk Plus."
+                },
+                {
+                    "title": "Description",
+                    "type": "text",
+                    "name": "description",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the description of the ticket request that you want to update in ServiceDesk Plus."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the status that you want to assign to the ticket request you want to update in ServiceDesk Plus.",
+                    "options": [
+                        "Assigned",
+                        "Cancelled",
+                        "Closed",
+                        "In Progress",
+                        "Onhold",
+                        "Open",
+                        "Resolved"
+                    ]
+                },
+                {
+                    "title": "Urgency",
+                    "type": "select",
+                    "name": "urgency",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the urgency that you want to assign to the ticket request you want to update in ServiceDesk Plus.",
+                    "options": [
+                        "High",
+                        "Low",
+                        "Normal",
+                        "Urgent"
+                    ]
+                },
+                {
+                    "title": "Priority",
+                    "type": "select",
+                    "name": "priority",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the priority that you want to assign to the ticket request you want to update in ServiceDesk Plus.",
+                    "options": [
+                        "High",
+                        "Low",
+                        "Medium",
+                        "Normal"
+                    ]
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Add custom fields, in the JSON format, to the ticket request that you want to update in ServiceDesk Plus. For example, {\n  \"level\": {\n    \"name\": \"Tier 3\"\n  },\n  \"category\": {\n    \"name\": \"Network\"\n  }\n}."
+                }
+            ]
+        },
+        {
+            "operation": "close_request",
+            "title": "Close Ticket",
+            "description": "Closes a ticket in ServiceDesk Plus based on the ticket request ID and other input parameters you have specified.",
+            "category": "investigation",
+            "annotation": "close_record",
+            "output_schema": {
+                "response_status": {
+                    "status_code": "",
+                    "messages": [
+                        {
+                            "status_code": "",
+                            "type": "",
+                            "message": ""
+                        }
+                    ],
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket that you want to close in ServiceDesk Plus."
+                },
+                {
+                    "title": "FCR",
+                    "type": "checkbox",
+                    "name": "is_fcr",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this option if the ticket that you want to close in ServiceDesk Plus has been marked as First Call Resolution (FCR)."
+                },
+                {
+                    "title": "Has requester acknowledged the resolution?",
+                    "type": "checkbox",
+                    "name": "requester_ack_resolution",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Select this option if the resolution of the ticket that you want to close in ServiceDesk Plus has been acknowledged by the requester."
+                },
+                {
+                    "title": "Comments",
+                    "type": "text",
+                    "name": "requester_ack_comments",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the comment specified by the requester while acknowledging the resolution of the ticket."
+                },
+                {
+                    "title": "Request Closure Code",
+                    "type": "select",
+                    "name": "closure_code",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the closure code that you want to assign to the ticket that you want to close in ServiceDesk Plus.",
+                    "options": [
+                        "Cancelled",
+                        "Failed",
+                        "Moved",
+                        "Postponed",
+                        "Success",
+                        "Unable to Reproduce"
+                    ]
+                },
+                {
+                    "title": "Request Closure Comments",
+                    "type": "text",
+                    "name": "closure_comments",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the closure comment to be added to the ticket that you want to close in ServiceDesk Plus."
+                }
+            ]
+        },
+        {
+            "operation": "delete_request",
+            "title": "Delete Ticket",
+            "description": "Deletes a ticket (moves it to 'trash') from ServiceDesk Plus based on the ticket request ID you have specified.",
+            "category": "investigation",
+            "annotation": "delete_request",
+            "output_schema": {
+                "request": {
+                    "ola_due_by_time": "",
+                    "deleted_by": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": "",
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "resolution": {
+                        "resolution_attachments": [],
+                        "content": ""
+                    },
+                    "onhold_time": "",
+                    "is_trashed": "",
+                    "id": "",
+                    "assigned_time": "",
+                    "requester": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "cancel_requested_by": "",
+                    "sla_violated_technician": "",
+                    "item": "",
+                    "has_resolution_attachments": "",
+                    "impact": "",
+                    "sla": "",
+                    "priority": "",
+                    "sla_violated_group": "",
+                    "tags": [],
+                    "has_notes": "",
+                    "is_current_ola_violated": "",
+                    "image_token": "",
+                    "status": {
+                        "color": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "template": {
+                        "is_service_template": "",
+                        "service_category": "",
+                        "name": "",
+                        "id": ""
+                    },
+                    "primary_asset": "",
+                    "request_type": "",
+                    "cancel_requested_time": "",
+                    "chat_type": "",
+                    "is_service_request": "",
+                    "cancel_requested": "",
+                    "has_request_initiated_change": "",
+                    "has_attachments": "",
+                    "has_linked_requests": "",
+                    "has_request_caused_by_change": "",
+                    "has_problem": "",
+                    "subject": "",
+                    "linked_to_request": "",
+                    "mode": "",
+                    "is_read": "",
+                    "lifecycle": "",
+                    "reason_for_cancel": "",
+                    "assets": [],
+                    "group": "",
+                    "email_to": [],
+                    "created_time": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "level": "",
+                    "approval_status": "",
+                    "service_category": "",
+                    "created_by": {
+                        "email_id": "",
+                        "phone": "",
+                        "name": "",
+                        "mobile": "",
+                        "profile_pic": {
+                            "content-url": ""
+                        },
+                        "is_vipuser": "",
+                        "id": "",
+                        "department": ""
+                    },
+                    "scheduled_end_time": "",
+                    "first_response_due_by_time": "",
+                    "last_updated_time": "",
+                    "impact_details": "",
+                    "subcategory": "",
+                    "email_cc": [],
+                    "scheduled_start_time": "",
+                    "email_ids_to_notify": [],
+                    "notification_status": "",
+                    "description": "",
+                    "has_dependency": "",
+                    "has_conversation": "",
+                    "callback_url": "",
+                    "urgency": "",
+                    "is_shared": "",
+                    "request_template_task_ids": [],
+                    "department": "",
+                    "is_reopened": "",
+                    "has_draft": "",
+                    "is_overdue": "",
+                    "technician": "",
+                    "due_by_time": "",
+                    "has_project": "",
+                    "deleted_on": {
+                        "display_value": "",
+                        "value": ""
+                    },
+                    "is_first_response_overdue": "",
+                    "cancel_requested_is_pending": "",
+                    "recommend_template": "",
+                    "unreplied_count": "",
+                    "category": "",
+                    "maintenance": ""
+                },
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket that you want to delete (move to trash) from ServiceDesk Plus."
+                }
+            ]
+        },
+        {
+            "operation": "delete_request_from_trash",
+            "title": "Delete Ticket From Trash",
+            "description": "Permanently deletes a ticket from the 'Trash' in ServiceDesk Plus based on the Ticket Request ID you have specified.",
+            "category": "investigation",
+            "annotation": "delete_request_from_trash",
+            "output_schema": {
+                "response_status": {
+                    "status_code": "",
+                    "status": ""
+                }
+            },
+            "enabled": true,
+            "parameters": [
+                {
+                    "title": "Ticket Request ID",
+                    "type": "text",
+                    "name": "request_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the ticket that you want to permanently delete from the 'trash' in ServiceDesk Plus."
+                }
+            ]
+        },
+        {
+            "operation": "get_request_task",
+            "title": "Get Request Task",
+            "description": "This operation helps you to get a specific task.",
+            "category": "investigation",
+            "annotation": "get_request_task",
+            "output_schema": {},
+            "enabled": true,
+            "visible": true,
+            "parameters": [
+                {
+                    "title": "Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the request whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Task ID",
+                    "type": "text",
+                    "name": "task_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the Task ID of the requester whose details you want to retrieve from ServiceDesk Plus."
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "get_list_request_task",
+            "title": "Get List Request Task",
+            "description": "This operation helps you to Get list of tasks.",
+            "category": "investigation",
+            "annotation": "get_list_request_task",
+            "output_schema": {},
+            "enabled": true,
+            "visible": true,
+            "open": false,
+            "parameters": [
+                {
+                    "title": "Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the request whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Sort By",
+                    "type": "text",
+                    "name": "sort_field",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the field using which you want to sort the requesters retrieved from ServiceDesk Plus. For example, name"
+                },
+                {
+                    "title": "Sort Order",
+                    "type": "select",
+                    "name": "sort_order",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the order in which you want to sort the requesters retrieved from ServiceDesk Plus. You can choose between Ascending or Descending.",
+                    "options": [
+                        "Ascending",
+                        "Descending"
+                    ]
+                },
+                {
+                    "title": "Start Index",
+                    "type": "integer",
+                    "name": "start_index",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the index of the first item (requester) to be returned by this operation. This parameter is useful if you want to get a subset of records. \nNote: You can specify the minimum number as 1."
+                },
+                {
+                    "title": "Record Count",
+                    "type": "integer",
+                    "name": "size",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the maximum number of records (requesters) to be returned by this operation in a single request. \nNote: You can specify the minimum number as 1."
+                }
+            ]
+        },
+        {
+            "operation": "delete_request_task",
+            "title": "Delete Request Task",
+            "description": "This operation helps you to delete tasks.",
+            "category": "investigation",
+            "annotation": "delete_request_task",
+            "output_schema": {},
+            "enabled": true,
+            "visible": true,
+            "parameters": [
+                {
+                    "title": "Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the request whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Task ID",
+                    "type": "text",
+                    "name": "task_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the Task ID of the requester whose details you want to retrieve from ServiceDesk Plus."
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "add_request_task",
+            "title": "Add Request Task",
+            "description": "This operation helps you to add tasks.",
+            "category": "investigation",
+            "annotation": "add_request_task",
+            "output_schema": {},
+            "enabled": true,
+            "visible": true,
+            "parameters": [
+                {
+                    "title": "Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the request whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Title",
+                    "type": "text",
+                    "name": "title",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Title of the task."
+                },
+                {
+                    "title": "Description",
+                    "type": "html",
+                    "name": "description",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the description of the ticket request to create in ServiceDesk Plus MSP."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "Open",
+                    "tooltip": "Select the status of the ticket request to create in ServiceDesk Plus MSP.",
+                    "options": [
+                        "Canceled",
+                        "Closed",
+                        "In Progress",
+                        "On Hold",
+                        "Open",
+                        "Pending Verification",
+                        "Rejected",
+                        "Resolved",
+                        "Staging"
+                    ]
+                },
+                {
+                    "title": "Priority",
+                    "type": "select",
+                    "name": "priority",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "Low",
+                    "tooltip": "Select the priority of the ticket request to create in ServiceDesk Plus MSP.",
+                    "options": [
+                        "Critical",
+                        "High",
+                        "Low",
+                        "Medium",
+                        "Normal"
+                    ]
+                },
+                {
+                    "title": "Group",
+                    "type": "text",
+                    "name": "group",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "Specify the group that you want to assign to the ticket request being created in ServiceDesk Plus MSP."
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Add custom fields, in the JSON format, to the ticket request that you want to create in ServiceDesk Plus. For example, \n{\n  \"level\": {\n    \"name\": \"Tier 3\"\n  },\n  \"category\": {\n    \"name\": \"Network\"\n  }\n}"
+                }
+            ],
+            "open": false
+        },
+        {
+            "operation": "edit_request_task",
+            "title": "Edit Request Task",
+            "description": "This operation helps you to edit tasks.",
+            "category": "investigation",
+            "annotation": "edit_request_task",
+            "output_schema": {},
+            "enabled": true,
+            "visible": true,
+            "parameters": [
+                {
+                    "title": "Request ID",
+                    "type": "text",
+                    "name": "id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the ID of the request whose details you want to retrieve from ServiceDesk Plus."
+                },
+                {
+                    "title": "Task ID",
+                    "type": "text",
+                    "name": "task_id",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the Task ID for this operation."
+                },
+                {
+                    "title": "Description",
+                    "type": "html",
+                    "name": "description",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Specify the description of the ticket request to create in ServiceDesk Plus MSP."
+                },
+                {
+                    "title": "Status",
+                    "type": "select",
+                    "name": "status",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the status of the ticket request to create in ServiceDesk Plus MSP.",
+                    "options": [
+                        "Canceled",
+                        "Closed",
+                        "In Progress",
+                        "On Hold",
+                        "Open",
+                        "Pending Verification",
+                        "Rejected",
+                        "Resolved",
+                        "Staging"
+                    ]
+                },
+                {
+                    "title": "Priority",
+                    "type": "select",
+                    "name": "priority",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Select the priority of the ticket request to create in ServiceDesk Plus MSP.",
+                    "options": [
+                        "Critical",
+                        "High",
+                        "Low",
+                        "Medium",
+                        "Normal"
+                    ]
+                },
+                {
+                    "title": "Group",
+                    "type": "text",
+                    "name": "group",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "tooltip": "Specify the group that you want to assign to the ticket request being created in ServiceDesk Plus MSP."
+                },
+                {
+                    "title": "Other Fields",
+                    "type": "json",
+                    "name": "other_fields",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "Add custom fields, in the JSON format, to the task that you want to create in ServiceDesk Plus. For example, \n{\n  \"level\": {\n    \"name\": \"Tier 3\"\n  },\n  \"category\": {\n    \"name\": \"Network\"\n  }\n}"
+                }
+            ],
+            "open": false
+        }
+    ],
+    "cs_compatible": true,
+    "help_online": "https://docs.fortinet.com/document/fortisoar/2.0.0/manageengine-servicedesk-plus/479/manageengine-servicedesk-plus-v2-0-0"
+}
